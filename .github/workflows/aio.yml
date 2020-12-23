@@ -1,0 +1,35 @@
+name: AllInOne
+on: pull_request
+jobs:
+  cookiecutter:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+      - name: Check rendering
+        env:
+          GENERATED_DIR: ${{ runner.temp }}/generated
+        run: |
+          mkdir -p ${GENERATED_DIR}
+          pip install wheel
+          pip install cookiecutter
+          cookiecutter --directory plugins/stern --no-input . --output-dir ${GENERATED_DIR}
+          if ! test -d ${GENERATED_DIR}/asdf-stern; then
+            echo "plugin directory not rendered for stern"
+          else
+            echo "Directory rendered for stern"
+          fi
+          cookiecutter --directory plugins/arkade --no-input . --output-dir ${GENERATED_DIR}
+          if ! test -d ${GENERATED_DIR}/asdf-arkade; then
+            echo "plugin directory not rendered for arkade"
+          else
+            echo "Directory rendered for arkade"
+          fi
