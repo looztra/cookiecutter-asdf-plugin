@@ -9,7 +9,7 @@ set -o pipefail
 readonly NO_BINARY_ALTNAME=@@UNDEFINED@@
 readonly g_github_coordinates={{ cookiecutter.github_coordinates }}
 readonly g_binary_name={{ cookiecutter.binary_name }}
-readonly g_binary_altname={% if cookiecutter.binary_altname | length >0 %}{{ cookiecutter.binary_altname}}{% else %}$NO_BINARY_ALTNAME{% endif %}
+readonly g_binary_altname={% if cookiecutter.binary_altname | length >0 %}{{ cookiecutter.binary_altname}}{% else %}"$NO_BINARY_ALTNAME"{% endif %}
 #
 # __VERSION__/__VERSION_SHORT__/__BINARY_NAME__/__PLATFORM__
 #

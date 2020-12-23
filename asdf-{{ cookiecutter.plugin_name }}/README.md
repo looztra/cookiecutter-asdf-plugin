@@ -3,7 +3,7 @@
 ![AllInOne](https://github.com/{{ cookiecutter.plugin_github_coordinates }}/workflows/AllInOne/badge.svg)
 [![GitHub license](https://img.shields.io/github/license/{{ cookiecutter.plugin_github_coordinates }}?style=plastic)](https://github.com/{{ cookiecutter.plugin_github_coordinates }}/blob/master/LICENSE)
 
-## arkade
+## {{ cookiecutter.plugin_name }}
 
 <https://github.com/{{ cookiecutter.github_coordinates }}>
 
@@ -19,4 +19,4 @@ Check out the [asdf](https://github.com/asdf-vm/asdf) readme for instructions on
 
 ## Source code
 
-This source code has been generated with : `cookiecutter --overwrite-if-exists --directory plugins/{{ cookiecutter.plugin_name }} --no-input cookiecutter-asdf-plugin`
+This source code has been generated with : `cookiecutter --overwrite-if-exists --directory plugins/{{ cookiecutter.plugin_name }} --no-input https://github.com/looztra/cookiecutter-asdf-plugin`
