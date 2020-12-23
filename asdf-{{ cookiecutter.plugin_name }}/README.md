@@ -3,6 +3,10 @@
 ![AllInOne](https://github.com/{{ cookiecutter.plugin_github_coordinates }}/workflows/AllInOne/badge.svg)
 [![GitHub license](https://img.shields.io/github/license/{{ cookiecutter.plugin_github_coordinates }}?style=plastic)](https://github.com/{{ cookiecutter.plugin_github_coordinates }}/blob/master/LICENSE)
 
+## Build History
+
+[![Build history](https://buildstats.info/github/chart/{{ cookiecutter.plugin_github_coordinates }}?branch=master)](https://github.com/{{ cookiecutter.plugin_github_coordinates }}/actions)
+
 ## {{ cookiecutter.plugin_name }}
 
 <https://github.com/{{ cookiecutter.github_coordinates }}>
