@@ -13,6 +13,5 @@
   "downloaded_file_is_not_an_archive": "false",
   "platform_pattern": "uname_c_x86_64",
   "get_platform_custom_content": "",
-  "strip_v_in_version": false,
   "action_sh_checker_version": "v0.1.8"
 }

@@ -22,7 +22,8 @@ jobs:
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1
         with:
-          command: {{ cookiecutter.test_command }}
+          command: {{ cookiecutter.test_command }}{% if cookiecutter.version_to_test is defined %}
+          version: {{ cookiecutter.version_to_test }}{% endif %}
 
   lint:
     runs-on: ubuntu-latest

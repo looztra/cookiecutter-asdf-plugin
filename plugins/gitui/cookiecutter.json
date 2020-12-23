@@ -1,0 +1,18 @@
+{
+  "plugin_name": "gitui",
+  "plugin_github_coordinates": "looztra/asdf-{{ cookiecutter.plugin_name }}",
+  "github_coordinates": "extrawurst/gitui",
+  "test_command": "gitui --version",
+  "sample_release_url_linux": "https://github.com/extrawurst/gitui/releases/download/v0.6.0/gitui-linux-musl.tar.gz",
+  "sample_release_url_macos": "https://github.com/extrawurst/gitui/releases/download/v0.6.0/gitui-mac.tar.gz",
+  "binary_name": "gitui",
+  "binary_altname": "",
+  "filename_template": "__BINARY_NAME__-__PLATFORM__.tar.gz",
+  "download_url_template": "https://github.com/__GITHUB_COORDINATES__/releases/download/v__VERSION__/__FILENAME__",
+  "binary_path_in_archive_template": "__ARCHIVE_DIR__/__BINARY_NAME__",
+  "downloaded_file_is_not_an_archive": "false",
+  "platform_pattern": "custom",
+  "get_platform_custom_content": "local operating_system\r\n  operating_system=$(uname | tr '[:upper:]' '[:lower:]')\r\n  if [[ \"$operating_system\" == \"linux\" ]]; then\r\n    echo \"linux-musl\"\r\n  else\r\n    echo \"mac\"\r\n  fi",
+  "strip_v_in_version": true,
+  "action_sh_checker_version": "v0.1.8"
+}
