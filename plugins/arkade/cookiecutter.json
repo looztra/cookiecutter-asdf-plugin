@@ -1,0 +1,17 @@
+{
+  "plugin_name": "arkade",
+  "plugin_github_coordinates": "asdf-community/asdf-{{ cookiecutter.plugin_name }}",
+  "github_coordinates": "alexellis/arkade",
+  "test_command": "ark version",
+  "sample_release_url_linux": "https://github.com/alexellis/arkade/releases/download/0.6.10/arkade",
+  "sample_release_url_macos": "https://github.com/alexellis/arkade/releases/download/0.6.10/arkade-darwin",
+  "binary_name": "arkade",
+  "binary_altname": "ark",
+  "filename_template": "__BINARY_NAME____PLATFORM__",
+  "download_url_template": "https://github.com/__GITHUB_COORDINATES__/releases/download/__VERSION__/__FILENAME__",
+  "binary_path_in_archive_template": "__ARCHIVE_DIR__/__BINARY_NAME____PLATFORM__",
+  "downloaded_file_is_not_an_archive": "true",
+  "platform_pattern": "custom",
+  "get_platform_custom_content": "local operating_system\r\n  operating_system=$(uname | tr '[:upper:]' '[:lower:]')\r\n  if [[ \"$operating_system\" == \"linux\" ]]; then\r\n    echo \"\"\r\n  elif [[ \"$operating_system\" == \"darwin\" ]]; then\r\n    echo \"-darwin\"\r\n  else\r\n    log ERROR \"Unsupported value for operating_system [$operating_system]\"\r\n    exit 171\r\n  fi",
+  "action_sh_checker_version": "v0.1.8"
+}

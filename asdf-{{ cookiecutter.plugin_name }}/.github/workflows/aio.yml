@@ -1,0 +1,39 @@
+name: AllInOne
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  schedule:
+    - cron: 0 0 * * 5
+
+jobs:
+  plugin_test:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
+    steps:
+      - name: asdf_plugin_test
+        uses: asdf-vm/actions/plugin-test@v1
+        with:
+          command: {{ cookiecutter.test_command }}
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run the sh-checker
+        uses: luizm/action-sh-checker@{{ cookiecutter.action_sh_checker_version }}
+        env:
+          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          #SHELLCHECK_OPTS: -e SC1004 # Optional: exclude some shellcheck warnings.
+          SHFMT_OPTS: -i 2 # Optional: pass arguments to shfmt.
+        with:
+          sh_checker_comment: true
