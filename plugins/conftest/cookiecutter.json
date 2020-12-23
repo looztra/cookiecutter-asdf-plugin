@@ -1,0 +1,18 @@
+{
+  "plugin_name": "conftest",
+  "plugin_github_coordinates": "looztra/asdf-{{ cookiecutter.plugin_name }}",
+  "github_coordinates": "open-policy-agent/conftest",
+  "test_command": "conftest --version",
+  "sample_release_url_linux": "https://github.com/instrumenta/conftest/releases/download/v0.9.0/conftest_0.9.0_Linux_x86_64.tar.gz",
+  "sample_release_url_macos": "https://github.com/instrumenta/conftest/releases/download/v0.9.0/conftest_0.9.0_Darwin_x86_64.tar.gz",
+  "binary_name": "conftest",
+  "binary_altname": "",
+  "filename_template": "__BINARY_NAME_____VERSION_SHORT_____PLATFORM__.tar.gz",
+  "download_url_template": "https://github.com/__GITHUB_COORDINATES__/releases/download/__VERSION__/__FILENAME__",
+  "binary_path_in_archive_template": "__ARCHIVE_DIR__/__BINARY_NAME__",
+  "downloaded_file_is_not_an_archive": "false",
+  "platform_pattern": "uname_c_x86_64",
+  "get_platform_custom_content": "",
+  "strip_v_in_version": false,
+  "action_sh_checker_version": "v0.1.8"
+}
