@@ -1,0 +1,18 @@
+{
+  "plugin_name": "bottom",
+  "plugin_github_coordinates": "looztra/asdf-{{ cookiecutter.plugin_name }}",
+  "github_coordinates": "ClementTsang/bottom",
+  "test_command": "{{ cookiecutter.plugin_name }} --version",
+  "sample_release_url_linux": "https://github.com/ClementTsang/bottom/releases/download/0.4.3/bottom_x86_64-unknown-linux-gnu.tar.gz",
+  "sample_release_url_macos": "https://github.com/ClementTsang/bottom/releases/download/0.4.3/bottom_x86_64-apple-darwin.tar.gz",
+  "binary_name": "{{ cookiecutter.plugin_name }}",
+  "binary_altname": "btm",
+  "filename_template": "__BINARY_NAME_____PLATFORM__.tar.gz",
+  "download_url_template": "https://github.com/__GITHUB_COORDINATES__/releases/download/__VERSION__/__FILENAME__",
+  "binary_path_in_archive_template": "__ARCHIVE_DIR__/btm",
+  "downloaded_file_is_not_an_archive": "false",
+  "platform_pattern": "custom",
+  "get_platform_custom_content": "local operating_system\r\n  operating_system=$(uname | tr '[:upper:]' '[:lower:]')\r\n  if [[ \"$operating_system\" == \"linux\" ]]; then\r\n    echo \"x86_64-unknown-linux-gnu\"\r\n  elif [[ \"$operating_system\" == \"darwin\" ]]; then\r\n    echo \"x86_64-apple-darwin\"\r\n  else\r\n    log ERROR \"Unsupported value for operating_system [$operating_system]\"\r\n    exit 171\r\n  fi",
+  "strip_v_in_version": true,
+  "action_sh_checker_version": "v0.1.8"
+}
