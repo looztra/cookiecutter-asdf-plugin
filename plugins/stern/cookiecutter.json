@@ -14,5 +14,5 @@
   "platform_pattern": "uname_l_underscore_amd64",
   "get_platform_custom_content": "",
   "strip_v_in_version": true,
-  "action_sh_checker_version": "v0.1.8"
+  "action_sh_checker_version": "v0.1.12"
 }

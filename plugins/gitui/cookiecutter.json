@@ -14,5 +14,5 @@
   "platform_pattern": "custom",
   "get_platform_custom_content": "local operating_system\r\n  operating_system=$(uname | tr '[:upper:]' '[:lower:]')\r\n  if [[ \"$operating_system\" == \"linux\" ]]; then\r\n    echo \"linux-musl\"\r\n  else\r\n    echo \"mac\"\r\n  fi",
   "strip_v_in_version": true,
-  "action_sh_checker_version": "v0.1.8"
+  "action_sh_checker_version": "v0.1.12"
 }

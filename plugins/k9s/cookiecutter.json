@@ -14,7 +14,7 @@
   "platform_pattern": "uname_c_x86_64",
   "get_platform_custom_content": "",
   "strip_v_in_version": true,
-  "action_sh_checker_version": "v0.1.8",
+  "action_sh_checker_version": "v0.1.12",
   "get_download_url_custom": "k9s_get_download_url \"$version\" \"$platform\" \"$binary_name\"",
   "custom_functions": "\r\nget_filename_post_0_14_0() {\r\n  local version=\"$1\"\r\n  local platform=\"$2\"\r\n  local binary_name=\"$3\"\r\n\r\n  echo \"${binary_name}_${platform}.tar.gz\"\r\n}\r\n\r\nget_filename_pre_0_14_0() {\r\n  local version=\"$1\"\r\n  local platform=\"$2\"\r\n  local binary_name=\"$3\"\r\n\r\n  echo \"${binary_name}_${version}_${platform}.tar.gz\"\r\n}\r\n\r\nk9s_get_download_url() {\r\n  local version=\"$1\"\r\n  local platform=\"$2\"\r\n  local binary_name=\"$3\"\r\n  local filename\r\n  local path_version\r\n\r\n  # https:\/\/github.com\/derailed\/k9s\/releases\/download\/v0.16.1\/k9s_Linux_x86_64.tar.gz\r\n  # https:\/\/github.com\/derailed\/k9s\/releases\/download\/0.11.1\/k9s_0.11.1_Linux_x86_64.tar.gz\r\n  vercomp \"$version\" \"0.14.0\"\r\n  case $? in\r\n  0) op='=' ;;\r\n  1) op='>' ;;\r\n  2) op='<' ;;\r\n  esac\r\n  if [[ \"$op\" == '<' ]]; then\r\n    filename=\"$(get_filename_pre_0_14_0 \"$version\" \"$platform\" \"$binary_name\")\"\r\n  else\r\n    filename=\"$(get_filename_post_0_14_0 \"$version\" \"$platform\" \"$binary_name\")\"\r\n  fi\r\n\r\n  vercomp \"$version\" \"0.13.0\"\r\n  case $? in\r\n  0) op='=' ;;\r\n  1) op='>' ;;\r\n  2) op='<' ;;\r\n  esac\r\n  if [[ \"$op\" == '<' ]]; then\r\n    path_version=\"$version\"\r\n  else\r\n    path_version=\"v$version\"\r\n  fi\r\n\r\n  echo \"https:\/\/github.com\/derailed\/k9s\/releases\/download\/${path_version}\/${filename}\"\r\n}\r\n"
 }

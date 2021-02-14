@@ -14,6 +14,6 @@
   "platform_pattern": "uname_c_x86_64",
   "get_platform_custom_content": "",
   "strip_v_in_version": true,
-  "action_sh_checker_version": "v0.1.8",
+  "action_sh_checker_version": "v0.1.12",
   "readme_more_content": " ## Note\r\n\r\nThere is another `asdf-goreleaser` plugin available at <https:\/\/github.com\/kforsthoevel\/asdf-goreleaser\/> that supports more platforms including `windows`  and `arm`\r\n"
 }
